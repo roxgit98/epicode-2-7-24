@@ -95,7 +95,6 @@ const CommentArea = (props) => {
 
   useEffect(() => {
     if (props.asin) {
-      console.log("updated");
       fetchComments();
     }
   }, [props.asin]);

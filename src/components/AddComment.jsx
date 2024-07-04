@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 
 // class AddComment extends Component {
@@ -86,7 +86,6 @@ const AddComment = (props) => {
     comment: "",
     rate: "1",
     elementId: props.asin,
-    createdAt: "",
   });
 
   const handleSubmit = (e) => {
@@ -124,6 +123,10 @@ const AddComment = (props) => {
   const handleFieldChange = (propertyName, propertyValue) => {
     setNewComment({ ...newComment, [propertyName]: propertyValue });
   };
+
+  useEffect(() => {
+    handleFieldChange("elementId", props.asin);
+  }, [props.asin]);
 
   return (
     <Form onSubmit={handleSubmit}>

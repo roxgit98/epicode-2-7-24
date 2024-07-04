@@ -67,14 +67,8 @@ import { useState } from "react";
 // }
 
 const BookList = (props) => {
-  const [state, setState] = useState({
-    // searchQuery: "",
-    // selectedBook: null,
-  });
-
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedBookAsin, setSelectedBookAsin] = useState("");
-  console.log(selectedBookAsin);
 
   const changeSelectedBook = (asin) => {
     setSelectedBookAsin(asin);
